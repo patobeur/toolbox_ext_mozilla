@@ -1,0 +1,39 @@
+{
+
+  "manifest_version": 2,
+  "name": "Toolbox Extension (Pat)",
+  "version": "0.01",
+
+  "description": "Adds some actions to the toolbar.",
+  "homepage_url": "https://github.com/patobeur/toolbox_ext_mozilla",
+  "icons": {
+    "48": "icons/toolbox.svg"
+  },
+
+  "permissions": [
+    "activeTab"
+  ],
+
+  "browser_action": {
+    "default_icon": "icons/toolbox.svg",
+    "default_title": "Toolbox Test",
+    "default_popup": "toolbox/index.html"
+  },
+
+  "web_accessible_resources": [
+    "toolbox/img/one.png",
+    "toolbox/img/two.png",
+    "toolbox/img/three.png",
+    "toolbox/img/four.png",
+    "icons/toolbox.svg"
+  ],
+
+  "content_scripts": [
+    {
+      "exclude_matches": ["*://google.com/*"],
+      "matches": ["*://*.github.com/*"],
+      "js": ["toolbox/match.js"]
+    }
+  ]
+
+}
