@@ -4,34 +4,82 @@
  * except for elements that have the "toolboxify-image" class.
  */
 const name_extension = `Toolbox Test`;
-const hidePage = `body > :not(.toolboxify-image) {
-                    display: none;
-                  }`;
+const hidePage = `body > :not(.toolboxify-image) {display: none;}`;
+/**
+ * pages links
+ */
+const pageLinks = ['index','info','tests'];
+// browser.tabs.query({active: true, currentWindow: true}).then(consolelocal).catch(reportError);
+// pageLinks.forEach(
+  
+//   browser.tabs.query({active: true, currentWindow: true}).then(consolelocal).catch(reportError)
+// );
+
+let link_brand = document.querySelector("#link_brand");
+let link_index = document.querySelector("#link_index");
+let page_index = document.querySelector("#page-content");
+let link_tests = document.querySelector("#link_tests");
+let page_tests = document.querySelector("#tests-content");
+let link_info = document.querySelector("#link_info");
+let page_info = document.querySelector("#info-content");
+
+link_brand.addEventListener("click", (e) => {
+  clearmenu();
+    link_brand.classList.add("active");
+    link_index.classList.add("active");
+    page_index.classList.add("active");
+});
+link_tests.addEventListener("click", (e) => {
+  clearmenu();
+  if (!link_tests.classList.contains("active")){
+    link_tests.classList.add("active");
+    page_tests.classList.add("active");
+  }
+});
+link_index.addEventListener("click", (e) => {
+  clearmenu();
+  if (!link_index.classList.contains("active")){
+    link_index.classList.add("active");
+    page_index.classList.add("active");
+  }
+});
+link_info.addEventListener("click", (e) => {
+  clearmenu();
+  if (!link_info.classList.contains("active")){
+    link_info.classList.add("active");
+    page_info.classList.add("active");
+  }
+});
+function clearmenu() {
+  link_info.classList.remove("active");
+  page_info.classList.remove("active");
+  link_tests.classList.remove("active");
+  page_tests.classList.remove("active");
+  link_index.classList.remove("active");
+  page_index.classList.remove("active");
+}
+
 /**
  * Listen for clicks on the buttons, and send the appropriate message to
  * the content script in the page.
  */
 function listenForClicks() {
   document.addEventListener("click", (e) => {
-    console.log("listenForClicks");
     /**
      * Given the name of a beast, get the URL to the corresponding image.
      */
-    function getURLbyName(textcontent) {
-      console.log("masssin.js");
-      switch (textcontent) {
-        case "toolbox":
-          return browser.extension.getURL("/toolbox/img/one.png");
-        case "toolbox1":
-          return browser.extension.getURL("/toolbox/img/two.png");
-        case "toolbox2":
-          return browser.extension.getURL("/img/three.png");
-        case "toolbox3":
-          return browser.extension.getURL("img/four.png");
-        case "toolbox4":
-          return browser.extension.getURL("toolbox/img/one.png");
-        case "Frog":
-          return browser.extension.getURL("toolbox/img/two.png");
+    function getURLbyName(actiondata) {
+      switch (actiondata) {
+        case "gitpatobeur":
+          return browser.extension.getURL("/toolbox/img/vig_gitpatobeur.png");
+        case "lilo":
+          return browser.extension.getURL("/toolbox/img/vig_lilo.png");
+        case "mozhack":
+          return browser.extension.getURL("/toolbox/img/vig_mozhack.png");
+        case "rootme":
+          return browser.extension.getURL("/toolbox/img/vig_rootme.png");
+        case "trello":
+          return browser.extension.getURL("/toolbox/img/vig_trello.png");
       }
     }
 
@@ -40,15 +88,34 @@ function listenForClicks() {
      * then get the beast URL and
      * send a "toolboxify" message to the content script in the active tab.
      */
-    function patobeur(tabs) {
-      browser.tabs.insertCSS({code: hidePage}).then(() => {
-        let url = getURLbyName(e.target.textContent);
-        browser.tabs.sendMessage(tabs[0].id, {
-          command: "patobeur",
-          imageURL: url
-        });
-      });
+    function displayPicture(tabs) {
+      browser.tabs.insertCSS({code: hidePage}).then(
+          () => {
+          let actiondata = e.target.getAttribute("actiondata")
+          let url = getURLbyName(actiondata);
+          browser.tabs.sendMessage(
+            tabs[0].id,
+            {
+              command: "insertimage",
+              imageURL: url
+            }
+          );
+        }
+      );
     }
+    // function hydratAction(tabs) {
+    //   browser.tabs.then(
+    //       () => {
+    //       browser.tabs.sendMessage(
+    //         tabs[0].id,
+    //         {
+    //           command: e.target.getAttribute("actiondata"),
+    //           imageURL: url
+    //         }
+    //       );
+    //     }
+    //   );
+    // }
 
     /**
      * Remove the page-hiding CSS from the active tab,
@@ -62,11 +129,22 @@ function listenForClicks() {
       });
     }
     /**
-     * trr y 
+     * test
      */
     function test(tabs) {
       browser.tabs.sendMessage(tabs[0].id, {
         command: "test",
+      });
+    }
+
+    /**
+     * consolelocal
+     */
+    function consolelocal(datas,tabs) {
+      browser.tabs.sendMessage(tabs[0].id, {
+        command: "consolelocal",
+        sendedDatas: "fff",
+        sendedDatas2: datas,
       });
     }
 
@@ -76,30 +154,52 @@ function listenForClicks() {
     function reportError(error) {
       console.error(`Erreur avec  ` + name_extension + `: ${error}`);
     }
-
+    /**
+     * Just log the error to the console.
+     */
+    function reportActionError(error) {
+      console.error(`ActionError : ${error}`);
+    }
     /**
      * Get the active tab,
-     * then call "patobeur()" or "reset()" as appropriate.
+     * then call "displayPicture()" or "reset()" as appropriate.
      */
-    console.error(e.target.classList);
-    if (e.target.classList.contains("toolbox-action")) {
+    if (e.target.classList.contains("toolbox-action") && e.target.getAttribute("actiondata")) {
       browser.tabs.query({active: true, currentWindow: true})
-        .then(patobeur)
+        .then(displayPicture)
         .catch(reportError);
     }
-    else if (e.target.classList.contains("test")) {
-      // console.log("test");
-      // document.querySelector('#header').innerHTML = 'test';
-      browser.tabs.query({active: true, currentWindow: true})
-        .then(test)
-        .catch(reportError);
+    else if (!e.target.classList.contains("toolbox-action")&& e.target.getAttribute("actiondata")) {
+      switch(e.target.getAttribute("actiondata")){
+        case "reset":
+          browser.tabs.query({active: true, currentWindow: true})
+            .then(
+              reset
+              )
+            .catch(reportError);
+        break;
+        case "test":
+          browser.tabs.query({active: true, currentWindow: true})
+            .then(test)
+            .catch(reportError);
+        break;
+        case "consolelocal":
+          browser.tabs.query({active: true, currentWindow: true})
+            .then(consolelocal)
+            .catch(reportError);
+        break;
+      }
     }
-    else if (e.target.classList.contains("reset")) {
-      // console.log("reset");
-      browser.tabs.query({active: true, currentWindow: true})
-        .then(reset)
-        .catch(reportError);
-    }
+
+
+
+
+    
+    // if (e.target.getAttribute("actiondata")) {
+    //   browser.tabs.query({active: true, currentWindow: true})
+    //     .then(hydratAction)
+    //     .catch(reportActionError);
+    // }
   });
 }
 

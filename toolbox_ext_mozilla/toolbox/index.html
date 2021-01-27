@@ -7,132 +7,187 @@
     </head>
     <body>
       <div id="wrapper">
-        <div id="header" class="header">
-          <div class="brand">
+        <div id="header" class="header shadowed">
+          <div id="link_brand" class="brand" title="Home">
             <img src="../icons/toolbox.svg" alt="logo toolbox" class="brand-logo">
-            <a href="index.html">toolbox</a>
+            <div class="spanlist">
+              <span class="one">Toolbox</span>
+              <span class="two">Home</span>
+            </div>
           </div>
-          <div class="menu">
-            <div class="menu-item"><a href="index.html">Home</a></div>
+          <div class="nav">
+            <!-- <div class="menu-item"><a href="index.html">Home</a></div>
             <div class="menu-item"><a href="info.html">Info</a></div>
-            <div class="menu-item"><a href="tests.html">Tests</a></div>
+            <div class="menu-item"><a href="tests.html">Tests</a></div> -->
+            <!-- <div id="link_index" class="menu-item">Home</div> -->
             <!-- <div class="menu-item"><a href="#about:debugging">Info</a></div> -->
+            <div id="link_index" title="Home" class="active menu-item">Home</div>
+            <div id="link_info" title="Information Page" class="menu-item">Info</div>
+            <div id="link_tests" title="Tests Page" class="menu-item">Tests</div>
           </div>
         </div>
-        
-        <!-- popup-content -->
-        <div id="popup-content" class="bloc">
-          <!-- cards -->
-          <div class="card">
-            <figure class="figure">
-              <img src="img/four.png" alt="Page toolbox" class="fig">
-            </figure>
-            <div class="content">
-              <div class="front">
-                <p class="title">toolbox</p>
-              </div>
-              <div class="back">
-                <p>Cahier de texte toolbox, 
-                  <a href="#" >https://toolbox/</a></p>
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <figure class="figure">
-              <img src="img/one.png" alt="Page toolbox" class="fig">
-            </figure>
-            <div class="content">
-              <div class="front">
-                <p class="title">toolbox</p>
-              </div>
-              <div class="back">
-                <p>Cahier de texte toolbox, 
-                  <a href="#" >https://toolbox/</a></p>
+        <div class="contents">
+          <!-- page-content -->
+          <div id="page-content" class="active bloc index">
+            <!-- cards -->
+            <div class="card">
+              <figure class="figure">
+                <img src="img/vig_gitpatobeur.png" alt="Page toolbox" class="fig">
+              </figure>
+              <div class="content">
+                <div class="front">
+                  <p class="title">Le github de Patobeur...</p>
+                </div>
+                <div class="back">
+                  <p>Dépôt Github : 
+                    <a href="https://github.com/patobeur/toolbox_ext_mozilla" >en cours de dev</a></p>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="card">
-            <figure class="figure">
-              <img src="img/two.png" alt="Page toolbox" class="fig">
-            </figure>
-            <div class="content">
-              <div class="front">
-                <p class="title">toolbox</p>
-              </div>
-              <div class="back">
-                <p>Cahier de texte toolbox, 
-                  <a href="#" >https://toolbox/</a></p>
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <figure class="figure">
-              <img src="img/three.png" alt="Page toolbox" class="fig">
-            </figure>
-            <div class="content">
-              <div class="front">
-                <p class="title">toolbox</p>
-              </div>
-              <div class="back">
-                <p>Cahier de texte toolbox, 
-                  <a href="#" >https://toolbox/</a></p>
+            <div class="card">
+              <figure class="figure">
+                <img src="img/vig_lilo.png" alt="Page toolbox" class="fig">
+              </figure>
+              <div class="content">
+                <div class="front">
+                  <p class="title">Lilo Moteur de recherche !</p>
+                </div>
+                <div class="back">
+                  <p><a href="https://lilo.org" >Lilo.</a>, le moteur de recherche français et solidaire qui finance gratuitement les projets de votre choix. </p>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="card">
-            <figure class="figure">
-              <img src="img/four.png" alt="Page toolbox" class="fig">
-            </figure>
-            <div class="content">
-              <div class="front">
-                <p class="title">toolbox</p>
-              </div>
-              <div class="back">
-                <p>Cahier de texte toolbox, 
-                  <a href="#" >https://toolbox/</a></p>
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <figure class="figure">
-              <img src="img/one.png" alt="Page toolbox" class="fig">
-            </figure>
-            <div class="content">
-              <div class="front">
-                <p class="title">toolbox</p>
-              </div>
-              <div class="back">
-                <p>Cahier de texte toolbox, 
-                  <a href="#" >https://toolbox/</a></p>
+            <div class="card">
+              <figure class="figure">
+                <img src="img/vig_trello.png" alt="Page toolbox" class="fig">
+              </figure>
+              <div class="content">
+                <div class="front">
+                  <p class="title">Trello</p>
+                </div>
+                <div class="back">
+                  <p>Avec <a href="https://trello.com/" >Trello</a>, les équipes peuvent collaborer davantage et accomplir toujours plus de choses. </p>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="card">
-            <figure class="figure">
-              <img src="img/two.png" alt="Page toolbox" class="fig">
-            </figure>
-            <div class="content">
-              <div class="front">
-                <p class="title">toolbox</p>
-              </div>
-              <div class="back">
-                <p>Cahier de texte toolbox, 
-                  <a href="#" >https://toolbox/</a></p>
+            <div class="card">
+              <figure class="figure">
+                <img src="img/vig_mozhack.png" alt="Page toolbox" class="fig">
+              </figure>
+              <div class="content">
+                <div class="front">
+                  <p class="title">Developpez une extension avec mozilla FR</p>
+                </div>
+                <div class="back">
+                  <p>Documentation Mozilla Extension en FR,
+                    <a href="https://developer.mozilla.org/fr/docs/Mozilla/Add-ons/WebExtensions/Your_first_WebExtension" >Your_first_WebExtension</a></p>
+                </div>
               </div>
             </div>
-          </div>
-          <!-- cards fin -->
+            <div class="card">
+              <figure class="figure">
+                <img src="img/vig_mozhack.png" alt="Page toolbox" class="fig">
+              </figure>
+              <div class="content">
+                <div class="front">
+                  <p class="title">Developpez une extension avec mozilla US</p>
+                </div>
+                <div class="back">
+                  <p>Documentation Mozilla Extension en US, 
+                    <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions" >Your_first_WebExtension</a></p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="card">
+              <figure class="figure">
+                <img src="img/vig_rootme.png" alt="Page toolbox" class="fig">
+              </figure>
+              <div class="content">
+                <div class="front">
+                  <p class="title">Root Me. Une plateforme rapide, accessible et réaliste pour tester vos compétences en hacking.</p>
+                </div>
+                <div class="back">
+                  <p>la root est longue mais la voie est Libre, 
+                    <a href="https://www.root-me.org/" >tester vos compétences !</a></p>
+                </div>
+              </div>
+            </div>
+            <!-- cards fin -->
 
-          <!-- card-footer -->
-          <!-- <div class="card-footer">
-            <div class="content">
-              <p id="scrolltop">info | contact | autres</p>
-            </div>
-          </div> -->
-          <!-- card-footer fin -->
+          </div>
+          <!-- page-content fin -->
 
+          <!-- info-content -->
+          <div id="info-content" class="bloc info">
+
+            <!-- cards -->
+            <div class="card">
+              <div class="content">
+                  <h3>Extensions toolbox</h3>
+                  <p>Objet : Extension pour Firefox Mozilla</p>
+                  <p>Développement : Patobeur Etlardons</p>
+                  <p>Objectif : Educatif</p>
+                  <p>Responsable Qualité : E.T.</p>
+                  <p>Linkedin ou pas</p>
+                  <p>Github ou pas</p>
+                  <p>twiiiiiter ou pas</p>
+                  <p>Facebook etc...</p>
+                  <hr>
+                  <p>Documentation en français : <a title="mozilla fr" href="https://developer.mozilla.org/fr/docs/Mozilla/Add-ons/WebExtensions/Your_first_WebExtension"> developer.mozilla.org </a></p>
+                  <p>Documentation en anglais : <a title="mozilla us" href="https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions"> developer.mozilla.org </a></p>
+              </div>
+              <figure class="figure">
+                <img src="img/vig_toolbox.svg" alt="logo toolbox" class="brand-logo">
+              </figure>
+            </div>
+
+            <div class="card">
+              <div class="content">
+                  <h3>Chaine youtube Mozilla Hacks</h3>
+                  <p>url : <a title="mozilla fr" href="https://www.youtube.com/channel/UCijjo5gfAscWgNCKFHWm1EA"> moz://a HACKS</a></p>
+                  <p>Documentation en anglais : <a title="mozilla us" href="https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions"> developer.mozilla.org </a></p>
+              </div>
+              <figure class="figure">
+                <img src="img/vig_mozhack.png" alt="logo mozillahacks" class="fig">
+              </figure>
+            </div>
+            
+
+
+            <!-- cards fin -->
+
+          </div>
+          <!-- info-content fin -->
+
+          <!-- tests-content -->
+          <div id="tests-content" class="bloc tests">
+
+            <!-- cards -->
+            <div class="card">
+              <div class="content">
+                  <h3>Dev permanent !</h3>
+                  <p>Quelques tests ...</p>
+                  <div class="actions">
+                    <p>
+                      Affichez un logo : <span class="boutton toolbox-action" actiondata="gitpatobeur">vig_gitpatobeur.png</span><br/>
+                      Affichez un logo : <span class="boutton toolbox-action" actiondata="lilo">vig_lilo.png</span><br/>
+                      Affichez un logo : <span class="boutton toolbox-action" actiondata="mozhack">vig_mozhack.png</span><br/>
+                      Affichez un logo : <span class="boutton toolbox-action" actiondata="rootme">vig_rootme.png</span><br/>
+                      Affichez un logo : <span class="boutton toolbox-action" actiondata="trello">vig_trello.png</span><br/>
+                      Revenir à la page normale : <span class="boutton" actiondata="reset">Reset</span><br/>
+                      reset : <span class="boutton" actiondata="reset">same reset</span>
+                      test consolelocal : <span class="boutton" actiondata="consolelocal">console test en local</span>
+                    </p>
+                  </div>
+              </div>
+            </div>
+            <!-- cards fin -->
+
+          </div>
+          <!-- tests-content fin -->
         </div>
-        <!-- popup-content fin -->
+
 
         <div id="footer" class="footer">
           <div class="content">

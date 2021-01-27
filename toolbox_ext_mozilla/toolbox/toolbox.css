@@ -1,7 +1,16 @@
 :root {
   --app_width : 350px;
   --app_height : 300px;
-  --white : white;
+  --wrapper : white;
+  --wrappercolor : rgb(18, 9, 95);
+  --header :  rgb(31, 0, 69);
+  --headercolor : white;
+  --menu-item-color: white;
+  --menu-item-bg: none;
+  --menu-item-border: white;
+  --menu-item-bg-hover: rgb(5, 121, 11);
+  --menu-item-bg-active:white;
+  --menu-item-color-active:rgb(0, 0, 0);
 }
 * {
 	padding: 0;
@@ -21,24 +30,21 @@ html {
   text-decoration: none;
   font-size: .8rem;
 }
+.shadowed {
+	box-shadow: 2px 2px 2px black;
+}
 .bloc a:hover {
   background-color: rgb(200, 255, 0);
   font-style: italic;
 }
-.header .menu a,
+/* .header .menu a,
 .header .menu a:visited,
 .header .menu a:active,
 .header .menu a:hover {
   color: rgb(117, 14, 14);
   text-decoration: none;
   font-size: .8rem;
-}
-/* 
-.bloc.test .card .content p a:hover{
-  background-color: rgb(200, 255, 0);
-  font-style: italic;
 } */
-
 body {
   scroll-behavior: smooth;
 	overflow: hidden;
@@ -58,23 +64,28 @@ body {
   position: relative;
   width: auto;
   height: 100vh;
-  background-color: var(--white);
+  background-color: var(--wrapper);
+  color: var(--wrappercolor);
   overflow: hidden;
   display:flex;
   flex-direction: column;
   align-items: center;
 }
+
+
+
 /* header  */
 #wrapper #header {
   width: 100%;
   display:flex;
   flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-  background-color: var(--white);
-  border-bottom:1px solid black;
-}
-#wrapper #header .menu-item :last-child {
-  flex-grow:1;
+  background-color: var(--header);
+  color: var(--headercolor);
+  border-bottom:1px solid rgb(0, 0, 0);
+  padding-right:1rem;
+  z-index: 2;
 }
 #wrapper #header .brand {
   height:36px;
@@ -82,32 +93,118 @@ body {
   flex-direction: row;
   align-items: center;
   margin-right: .3rem;
+  color: var(--headercolor);
+  font-weight: 800;
+  width:100%;
 }
+#wrapper #header .brand .spanlist {
+  position:relative;
+  width:100%;
+  height: 100%;
+  overflow: hidden;
+}
+#wrapper #header .brand .spanlist span {
+  display: block;
+  width:100%;
+  height:100%;
+  
+  transition: top .2s ease;
+}
+#wrapper #header .brand .spanlist span.one {
+  position:absolute;
+  top:5px;
+}
+#wrapper #header .brand .spanlist span.two {
+  position:absolute;
+  top:100%;
+}
+
 #wrapper #header .brand .brand-logo{
-  height:36px;
+  height:100%;
+  margin: 0 .1rem 0 .1rem;
+  transition: transform .1s ease;
 }
-#wrapper #header .menu {
+#wrapper #header .brand:hover .brand-logo {
+  transform: rotate(-90deg);
+  transition: transform .2s ease;
+}
+#wrapper #header .brand:hover .spanlist span.one {
+  top:-100%;
+  transition: top .2s ease;
+}
+#wrapper #header .brand:hover .spanlist span.two {
+  top:5px;
+  transition: top .2s ease;
+}
+#wrapper #header .nav {
   display:flex;
   flex-direction: row;
-  align-items: center;
 }
-#wrapper #header .menu .menu-item {
-  margin-left: .3rem;
+
+#wrapper #header .nav .menu-item {
+	text-transform: uppercase;
+	/* margin-left: .3rem; */
+	padding: 0 .3rem .1rem;
+	border: 1px solid var(--menu-item-border);
+	display:flex;
+	align-items: center;
+	font-size: 1rem;
+ }
+ #wrapper #header .nav .menu-item:hover {
+	background-color: var(--menu-item-bg-hover);
+ }
+#wrapper #header .nav .menu-item:first-child {
+  border-radius: .3rem;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
 }
-#wrapper #header .menu .menu-item :last-child {
-  margin-left: 0;
+#wrapper #header .nav .menu-item:last-child {
+  border-radius: .3rem;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  padding-right: .3rem;
 }
-/* popup-content  */
-#popup-content2, #popup-content, #error-content {
+#wrapper #header .nav .menu-item.active {
+  background-color: var(--menu-item-bg-active);
+  color: var(--menu-item-color-active);
+}
+
+
+
+/* x-content  */
+.contents {
+  position: relative;
+  overflow: hidden;
   overflow-y: auto;
   height:100vh;
+  width:100%
 }
-.bloc {
+#error-content {
+  top:0;
+  overflow: unset;
+  transition:top .5s ease-in-out;
   width: 100%;
   margin : 0;
-  /* background-color: rgb(153, 255, 144); */
+  height:100%;
 }
-.bloc .card {
+.contents .bloc {
+  position: absolute;
+  top:-100%;
+  overflow: hidden;
+  transition:top .2s ease-in-out;
+  width: 100%;
+  margin : 0;
+  height:100%;
+}
+.contents .bloc.active {
+	top:0;
+	overflow: unset;
+	transition:top .5s ease-in-out;
+	width: 100%;
+	margin : 0;
+	height:100%;
+}
+.contents .bloc .card {
   width: 100%;
   margin : 0;
   display:flex;
@@ -115,35 +212,35 @@ body {
   align-content: flex-start;
   align-items: flex-start;
   border-bottom:1px solid black;
-  cursor: pointer;
 }
-.bloc .card:last-child {
+.contents .bloc .card:last-child {
   border-bottom:none;
 }
-.bloc .card figure {
+.contents .bloc .card figure {
   display:flex;
   width: 100px;
 	height: 50px;
   margin : 0;
-  
+  overflow: hidden;  
 }
-.bloc .card figure img, .bloc .card figure .svg {
+.contents .bloc .card figure img
+.contents .bloc .card figure .svg {
 	max-height: 50px;
 	width: 100%;
 	object-fit: cover;
 }
-.bloc .card .content {
+.contents .bloc .card .content {
 	max-height: 50px;
   width: 100%;
   height: 100%;
   display:flex;
   flex-direction: column;
-  padding:0 .2rem;
   overflow: hidden;
 }
-.bloc .card .content .front {
+.contents #page-content.bloc .card .content .front {
   min-height: 100%;
   height: 100%;
+  padding:0 .2rem;
   overflow: none;
   overflow-y: auto;
   display:flex;
@@ -151,89 +248,66 @@ body {
   font-weight: 800;
   transition: all .2s ease-in;
 }
-.bloc .card .content .back {
+.contents #page-content.bloc .card .content .back {
   min-height: 100%;
   height: 100%;
   overflow: hidden;
   overflow-y: auto;
   display:flex;
+  padding:0 .2rem;
   flex-direction: column;
 }
-/* .bloc .card:hover .content .front {
-  height:0;
-  background-color: darkgreen;
-  overflow: hidden;
-  transition: all 2s ease-in;
-} */
-.bloc .card:hover .content .front {
+.contents #page-content.bloc .card:hover .content .front {
   height:0;
   min-height: 0;
   overflow: hidden;
   transition: all .2s ease-in;
 }
-
 /* content-info */
-.bloc.test {
-  width: 100%;
-  margin : 0;
-  display:flex;
-  flex-direction: column;
-  align-content: flex-start;
-  align-items: flex-start;
-  /* border-bottom:1px solid black; */
-  cursor: pointer;
-  /* background-color: rgb(0, 0, 0);
-  color: aliceblue; */
-}
-.bloc.test .card ,.bloc.info .card {
+.bloc.tests .card ,.bloc.info .card {
   height: unset;
   max-height: unset;
 }
-.bloc.test .card .content, .bloc.info .card .content {
+.bloc.tests .card .content,
+.bloc.info .card .content {
   height: unset;
   max-height: unset;
   padding:0 .5rem;
   width:100%;
 }
+.bloc.tests .card .content {
+  line-height: 1.4rem;
+}
 .bloc.info .card .content p {
   border-bottom: 1px solid rgba(0, 0, 0, 0.267);
 }
-.bloc.test .card .content {
-  line-height: 1.4rem;
-}
-/* card footer  */
-.bloc .card-footer {
-  width: 100%;
-}
-.bloc .card-footer .content {
-  display:flex;
-  flex-direction: column;
-}
-.bloc .card-footer .content p {
-  width: 100%;
-  text-align: center;
-  cursor: pointer;
-}
+
+
+
+/* footer */
 .footer {
-  display:flex;
-  width:100%;
-  border-top:1px solid rgba(0,0,0.9);
+  width: 100%;
+  background-color: rgb(9, 34, 102);
 }
 .footer .content {
-  display:flex;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   justify-content: center;
-  width:100%;
+}
+.footer .content p {
+  width: max-content;
+  padding: 0 1rem;
+  line-height: 1.2rem;
+  color: white;
 }
 
-.bloc.taller {
-  height:100%;
-}
 
+/* boutton */
 .boutton {
   /* margin: .4rem auto; */
   padding: 0 .4rem;
   text-align: center;
-  cursor: pointer;
   border:1px solid black; 
   border-radius: .4rem;
   background-color:darkblue;

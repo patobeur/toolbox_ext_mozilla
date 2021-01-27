@@ -1,14 +1,7 @@
 // définition d’une nouvelle propriété pour la fenêtre
-
-
-// window.toto = "Cette variable globale a été ajoutée par un script de la page.";
-
-// redéfinition de la fonction intégrée window.confirm()
+window.dataId = 1;
 
 (function() {
-  // window.confirm = function() {
-  //   alert(window.toto);
-  // }
   /**
    * Check and set a global guard variable.
    * If this content script is injected into the same page again,
@@ -19,6 +12,10 @@
   }
   window.hasRun = true;
 
+  function consolelocal(sendedDatas) {
+    console.log("catched click = )");
+    console.log(sendedDatas);
+  }
   /**
    * Given a URL to a beast image, remove all existing beasts, then
    * create and style an IMG node pointing to
@@ -28,13 +25,13 @@
     removeExistingImages();
     let blocImage = document.createElement("img");
     blocImage.setAttribute("src", imageURL);
-    blocImage.style.height = "100vh";
+    blocImage.style.width = "100vw";
     blocImage.className = "toolboxify-image";
     document.body.appendChild(blocImage);
   }
 
   /**
-   * Remove every beast from the page.
+   * Remove every add from the page.
    */
   function removeExistingImages() {
     let existingImages = document.querySelectorAll(".toolboxify-image");
@@ -44,20 +41,17 @@
   }
 
   /**
-   * test on the page.
+   * todo
+   * retirer l'element du DOM ajouter par Match.js
    */
   function test() {
     let toolbox = document.getElementById("toolbox");
-    // console.log(imcbar);
     if(toolbox.style.display === "none") {
       toolbox.style.display = "initial"
     }
     else {
       toolbox.style.display = "none";
     }
-    // for (let beast of existingImages) {
-    //   beast.remove();
-    // }
   }
 
   /**
@@ -65,17 +59,19 @@
    * Call "toolbox()" or "reset()".
   */
   browser.runtime.onMessage.addListener((message) => {
-    
-  console.log("main.js");
-  console.log(message.command);
-    if (message.command === "toolbox") {
+    console.log("message.command")
+    console.log(message.command)
+    if (message.command === "insertimage") {
       insertImage(message.imageURL);
     } else if (message.command === "reset") {
       removeExistingImages();
+    } else if (message.command === "what") {
+      removeExistingImages();
     } else if (message.command === "test") {
       test();
+    } else if (message.command === "consolelocal") {
+      consolelocal(message.command);
     }
-    console.log(message + " hh");
   });
 
 })();
