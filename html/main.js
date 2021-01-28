@@ -1,11 +1,9 @@
 // définition d’une nouvelle propriété pour la fenêtre
-window.dataId = 1;
+window.dataId = 1; // useless just testing....
 
 (function() {
   /**
-   * Check and set a global guard variable.
-   * If this content script is injected into the same page again,
-   * it will do nothing next time.
+   * Check and set a global guard variable. If this content script is injected into the same page again, it will do nothing next time.
    */
   if (window.hasRun) {
     return;
@@ -13,13 +11,11 @@ window.dataId = 1;
   window.hasRun = true;
 
   function consolelocal(sendedDatas) {
-    console.log("catched click = )");
+    console.log("testing console.log displaying catched click =) ");
     console.log(sendedDatas);
   }
   /**
-   * Given a URL to a beast image, remove all existing beasts, then
-   * create and style an IMG node pointing to
-   * that image, then insert the node into the document.
+   * Given a URL to a beast image, remove all existing beasts, then create and style an IMG node pointing to that image, then insert the node into the document.
    */
   function insertImage(imageURL) {
     removeExistingImages();
@@ -42,7 +38,7 @@ window.dataId = 1;
 
   /**
    * todo
-   * retirer l'element du DOM ajouter par Match.js
+   * retirer l'element du DOM ajouter par if_you_open_toolbox_github_page.js
    */
   function test() {
     let toolbox = document.getElementById("toolbox");

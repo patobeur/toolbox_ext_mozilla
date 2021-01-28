@@ -3,36 +3,39 @@
   "manifest_version": 2,
   "name": "Toolbox Extension (Pat)",
   "version": "1",
-  "description": "Personal Test project, Adds some actions to the toolbar.",
-  "homepage_url": "https://github.com/patobeur/toolbox_ext_mozilla",
+  "description": "Personal Add-on project for firefox. Try to add some actions to the toolbar.",
+  "homepage_url": "https://github.com/patobeur/toolbox_ext_mozilla/",
   "icons": {
     "48": "icons/toolbox.svg"
   },
-
   "permissions": [
     "activeTab"
   ],
-
   "browser_action": {
     "default_icon": "icons/toolbox.svg",
     "default_title": "Toolbox Test",
-    "default_popup": "toolbox/index.html"
+    "default_popup": "html/index.html"
   },
-
   "web_accessible_resources": [
-    "toolbox/img/one.png",
-    "toolbox/img/two.png",
-    "toolbox/img/three.png",
-    "toolbox/img/four.png",
-    "icons/toolbox.svg"
+    "icons/toolbox.png",
+    "icons/toolbox.svg",
+    "html/img/rs/facebook.png",
+    "html/img/rs/google-plus.png",
+    "html/img/rs/instagram.png",
+    "html/img/rs/twitter.png",
+    "html/img/vig/vig_gitpatobeur.png",
+    "html/img/vig/vig_lilo.png",
+    "html/img/vig/vig_mozhack.png",
+    "html/img/vig/vig_rootme.png",
+    "html/img/vig/vig_trello.png",
+    "html/img/vig/vig_toolbox.png",
+    "html/img/svg/vig_toolbox.svg"
   ],
-
   "content_scripts": [
     {
       "exclude_matches": ["*://google.com/*"],
-      "matches": ["*://*.github.com/*"],
-      "js": ["toolbox/match.js"]
+      "matches": ["*://*.github.com/patobeur/toolbox_ext_mozilla*"],
+      "js": ["if_you_open_toolbox_github_page.js"]
     }
   ]
-
 }

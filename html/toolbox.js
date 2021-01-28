@@ -71,15 +71,15 @@ function listenForClicks() {
     function getURLbyName(actiondata) {
       switch (actiondata) {
         case "gitpatobeur":
-          return browser.extension.getURL("/toolbox/img/vig_gitpatobeur.png");
+          return browser.extension.getURL("/html/img/vig/vig_gitpatobeur.png");
         case "lilo":
-          return browser.extension.getURL("/toolbox/img/vig_lilo.png");
+          return browser.extension.getURL("/html/img/vig/vig_lilo.png");
         case "mozhack":
-          return browser.extension.getURL("/toolbox/img/vig_mozhack.png");
+          return browser.extension.getURL("/html/img/vig/vig_mozhack.png");
         case "rootme":
-          return browser.extension.getURL("/toolbox/img/vig_rootme.png");
+          return browser.extension.getURL("/html/img/vig/vig_rootme.png");
         case "trello":
-          return browser.extension.getURL("/toolbox/img/vig_trello.png");
+          return browser.extension.getURL("/html/img/vig/vig_trello.png");
       }
     }
 
