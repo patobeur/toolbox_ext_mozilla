@@ -5,9 +5,11 @@
       <link rel="stylesheet" href="index.css"/>
       <title>toolbox Extension 2021 (v0.01)</title>
     </head>
+
     <body>
       <div id="wrapper">
         <div id="header" class="header shadowed">
+
           <div id="link_brand" class="brand" title="Home">
             <img src="../icons/toolbox.svg" alt="logo toolbox" class="brand-logo">
             <div class="spanlist">
@@ -15,101 +17,41 @@
               <span class="two">Home</span>
             </div>
           </div>
-          <div class="nav">
-            <!-- <div class="menu-item"><a href="index.html">Home</a></div>
-            <div class="menu-item"><a href="info.html">Info</a></div>
-            <div class="menu-item"><a href="tests.html">Tests</a></div> -->
-            <!-- <div id="link_index" class="menu-item">Home</div> -->
-            <!-- <div class="menu-item"><a href="#about:debugging">Info</a></div> -->
-            <div id="link_index" title="Home" class="active menu-item">Home</div>
-            <div id="link_info" title="Information Page" class="menu-item">Info</div>
-            <div id="link_tests" title="Tests Page" class="menu-item">Tests</div>
-          </div>
+          <div id="topnav" class="nav"></div>          
         </div>
 
         <div class="contents">
-          <!-- index-content -->
-          <div id="index-content" class="bloc index"></div>
-          <!-- index-content fin -->
 
-          <!-- info-content -->
-          <div id="info-content" class="bloc info">
+          <div id="index-content" class="active bloc index"></div>
 
-            <!-- cards -->
-            <div class="card">
-              <div class="content">
-                  <h3>Extensions toolbox</h3>
-                  <p>Objet : Extension pour Firefox Mozilla</p>
-                  <p>Développement : Patobeur Etlardons</p>
-                  <p>Objectif : Educatif</p>
-                  <p>Responsable Qualité : E.T.</p>
-                  <p>Linkedin ou pas</p>
-                  <p>Github ou pas</p>
-                  <p>twiiiiiter ou pas</p>
-                  <p>Facebook etc...</p>
-                  <hr>
-                  <p>Documentation en français : <a title="mozilla fr" href="https://developer.mozilla.org/fr/docs/Mozilla/Add-ons/WebExtensions/Your_first_WebExtension"> developer.mozilla.org </a></p>
-                  <p>Documentation en anglais : <a title="mozilla us" href="https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions"> developer.mozilla.org </a></p>
-              </div>
-              <figure class="figure">
-                <img src="img/vig/vig_toolbox.svg" alt="logo toolbox" class="brand-logo">
-              </figure>
-            </div>
+          <div id="info-content" class="bloc info"></div>
 
-            <div class="card">
-              <div class="content">
-                  <h3>Chaine youtube Mozilla Hacks</h3>
-                  <p>url : <a title="mozilla fr" href="https://www.youtube.com/channel/UCijjo5gfAscWgNCKFHWm1EA"> moz://a HACKS</a></p>
-                  <p>Documentation en anglais : <a title="mozilla us" href="https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions"> developer.mozilla.org </a></p>
-              </div>
-              <figure class="figure">
-                <img src="img/vig/vig_mozhack.png" alt="logo mozillahacks" class="fig">
-              </figure>
-            </div>
-            
-
-
-            <!-- cards fin -->
-
-          </div>
-          <!-- info-content fin -->
-
-          <!-- tests-content -->
-          <div id="tests-content" class="active bloc tests">
-
-            <!-- cards -->
+          <div id="tests-content" class="bloc tests">
             <div class="card">
               <div class="content">
                   <h3>Dev permanent !</h3>
                   <p>Quelques tests ...</p>
-                  <div class="actions">
-                    <p>
-                      Affichez un logo : <span class="boutton toolbox-action" actiondata="gitpatobeur">vig_gitpatobeur.png</span><br/>
-                      Affichez un logo : <span class="boutton toolbox-action" actiondata="lilo">vig_lilo.png</span><br/>
-                      Affichez un logo : <span class="boutton toolbox-action" actiondata="mozhack">vig_mozhack.png</span><br/>
-                      Affichez un logo : <span class="boutton toolbox-action" actiondata="rootme">vig_rootme.png</span><br/>
-                      Affichez un logo : <span class="boutton toolbox-action" actiondata="trello">vig_trello.png</span><br/>
-                      Revenir à la page normale : <span class="boutton" actiondata="reset">Reset</span><br/>
-                      reset : <span class="boutton" actiondata="reset">same reset</span><br/>
-                      test :<span class="boutton" actiondata="consolelocal">console.log()</span>
-                    </p>
-                    <div class="options">
+                  <div id="actionscontent" class="actions">
+
+                    <!-- <div class="options">
                       <div class="title">
                         <h3>Options d'Affichage !!!</h3>
                       </div>
+
                       <div class="option-item">
                         <h4>Test option 1</h4>
+                        <p><span>Affichez une image</span> <span class="boutton" actiondata="gitpatobeur">gitpatobeur.png</span></p>
+                        <p><span>Revenir à la page normale</span> <span class="boutton" actiondata="reset">reset</span></p>
                         <p><span>test</span> <span class="boutton" actiondata="test">test</span></p>
-                        <p><span>test</span> <span class="boutton" actiondata="test">test</span></p>
+                        <p><span>console.log test</span> <span class="boutton" actiondata="consolelocal">console.log</span></p>
                       </div>
-                    </div>
+                    </div> -->
+                    
                   </div>
               </div>
             </div>
-            <!-- cards fin -->
-
           </div>
-          <!-- tests-content fin -->
+
         </div>
 
 

@@ -75,8 +75,6 @@ ToolBoxIconClicked();
 			insertImage(message.imageURL);
 		} else if (message.command === "reset") {
 			removeExistingImages();
-		} else if (message.command === "what") {
-			removeExistingImages();
 		} else if (message.command === "test") {
 			test();
 		} else if (message.command === "consolelocal") {
