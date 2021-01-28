@@ -1,5 +1,7 @@
 # toolbox  
 
+![Image](icons/toolbox.png)
+
 ## What it does ##
 
 The extension includes:
@@ -25,5 +27,3 @@ Cette extension inclue :
 
 ## en cours de dev ##
 P'
-
-[Link](#) and ![Image](icons/toolbox.png)
