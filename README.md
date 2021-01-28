@@ -19,7 +19,7 @@ Cette extension inclue :
 * Un outil pour les profs
 * Un outil pour les étudiants
 * Un outil pour les ???
-* la page affichée peux être modifiés 
+* la page affichée peux être modifiée 
 * propose des contenus et de l'information 7/24
 
 

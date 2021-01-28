@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   xmlns:ns="&amp;ns_sfw;"
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -17,8 +16,11 @@
    viewBox="0 0 256 256"
    enable-background="new 0 0 256 256"
    xml:space="preserve"
-   sodipodi:docname="toolbox_light.svg"
-   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"><defs
+   sodipodi:docname="toolbox.svg"
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"><metadata
+   id="metadata9"><rdf:RDF><cc:Work
+       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /></cc:Work></rdf:RDF></metadata><defs
    id="defs15" /><sodipodi:namedview
    pagecolor="#ffffff"
    bordercolor="#666666"
@@ -28,17 +30,18 @@
    guidetolerance="10"
    inkscape:pageopacity="0"
    inkscape:pageshadow="2"
-   inkscape:window-width="1920"
-   inkscape:window-height="1057"
+   inkscape:window-width="1680"
+   inkscape:window-height="1027"
    id="namedview13"
    showgrid="false"
    inkscape:zoom="3.4765625"
    inkscape:cx="128"
    inkscape:cy="128"
-   inkscape:window-x="-8"
+   inkscape:window-x="1912"
    inkscape:window-y="-8"
    inkscape:window-maximized="1"
-   inkscape:current-layer="g10" />
+   inkscape:current-layer="g10"
+   inkscape:document-rotation="0" />
 <g
    id="g10">
 	<path
@@ -47,20 +50,20 @@
    stroke-miterlimit="10"
    d="M94.479,120.084H13.076C12.898,122.7,12.8,125.338,12.8,128   c0,51.963,34.407,95.884,81.68,110.24L94.479,120.084L94.479,120.084z"
    id="path4"
-   style="fill:#cccccc" />
+   style="fill:#666666" />
 	<path
    fill="#FFFFFF"
    stroke="#FFFFFF"
    stroke-miterlimit="10"
    d="M223.883,64.134C203.229,33.188,167.997,12.8,128,12.8   c-39.998,0-75.229,20.388-95.883,51.334H223.883z"
    id="path6"
-   style="fill:#f2f2f2" />
+   style="fill:#b3b3b3" />
 	<path
    fill="#AFAFAF"
    stroke="#FFFFFF"
    stroke-miterlimit="10"
    d="M163.406,120.084v117.563C209.705,222.708,243.2,179.27,243.2,128   c0-2.662-0.099-5.3-0.276-7.916H163.406z"
    id="path8"
-   style="fill:#cccccc" />
+   style="fill:#666666" />
 </g>
 </svg>

@@ -2,9 +2,8 @@
 
   "manifest_version": 2,
   "name": "Toolbox Extension (Pat)",
-  "version": "0.01",
-
-  "description": "Adds some actions to the toolbar.",
+  "version": "1",
+  "description": "Personal Test project, Adds some actions to the toolbar.",
   "homepage_url": "https://github.com/patobeur/toolbox_ext_mozilla",
   "icons": {
     "48": "icons/toolbox.svg"
