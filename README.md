@@ -24,5 +24,6 @@ Cette extension inclue :
 
 
 ## en cours de dev ##
-[P']
+P'
+
 [Link](#) and ![Image](icons/toolbox.png)
