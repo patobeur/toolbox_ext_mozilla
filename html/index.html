@@ -26,113 +26,11 @@
             <div id="link_tests" title="Tests Page" class="menu-item">Tests</div>
           </div>
         </div>
-        <div class="contents">
-          <!-- page-content -->
-          <div id="page-content" class="active bloc index">
-            <!-- cards -->
-            <div class="card">
-              <figure class="figure">
-                <img src="img/vig/vig_gitpatobeur.png" alt="Page toolbox" class="fig">
-              </figure>
-              <div class="content">
-                <div class="front">
-                  <p class="title">Ouvrez about:debugging afin de charger un module complémentaire temporaire…</p>
-                </div>
-                <div class="back">
-                  <p>
-                    Tapez <span>about:debugging</span> dans l'adresse de votre navigateur pour Ouvrir la page de debugging.<br/>
-                    Cliquez sur [Ce Firefox] puis sur<br/>
-                    [Charger un module complémentaire temporaire] : </p>
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <figure class="figure">
-                <img src="img/vig/vig_gitpatobeur.png" alt="Page toolbox" class="fig">
-              </figure>
-              <div class="content">
-                <div class="front">
-                  <p class="title">Le github de Patobeur...</p>
-                </div>
-                <div class="back">
-                  <p>Dépôt Github : 
-                    <a href="https://github.com/patobeur/toolbox_ext_mozilla" >en cours de dev</a></p>
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <figure class="figure">
-                <img src="img/vig/vig_lilo.png" alt="Page toolbox" class="fig">
-              </figure>
-              <div class="content">
-                <div class="front">
-                  <p class="title">Lilo Moteur de recherche !</p>
-                </div>
-                <div class="back">
-                  <p><a href="https://lilo.org" >Lilo.</a>, le moteur de recherche français et solidaire qui finance gratuitement les projets de votre choix. </p>
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <figure class="figure">
-                <img src="img/vig/vig_trello.png" alt="Page toolbox" class="fig">
-              </figure>
-              <div class="content">
-                <div class="front">
-                  <p class="title">Trello</p>
-                </div>
-                <div class="back">
-                  <p>Avec <a href="https://trello.com/" >Trello</a>, les équipes peuvent collaborer davantage et accomplir toujours plus de choses. </p>
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <figure class="figure">
-                <img src="img/vig/vig_mozhack.png" alt="Page toolbox" class="fig">
-              </figure>
-              <div class="content">
-                <div class="front">
-                  <p class="title">Developpez une extension avec mozilla FR</p>
-                </div>
-                <div class="back">
-                  <p>Documentation Mozilla Extension en FR,
-                    <a href="https://developer.mozilla.org/fr/docs/Mozilla/Add-ons/WebExtensions/Your_first_WebExtension" >Your_first_WebExtension</a></p>
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <figure class="figure">
-                <img src="img/vig/vig_mozhack.png" alt="Page toolbox" class="fig">
-              </figure>
-              <div class="content">
-                <div class="front">
-                  <p class="title">Developpez une extension avec mozilla US</p>
-                </div>
-                <div class="back">
-                  <p>Documentation Mozilla Extension en US, 
-                    <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions" >Your_first_WebExtension</a></p>
-                </div>
-              </div>
-            </div>
-            
-            <div class="card">
-              <figure class="figure">
-                <img src="img/vig/vig_rootme.png" alt="Page toolbox" class="fig">
-              </figure>
-              <div class="content">
-                <div class="front">
-                  <p class="title">Root Me. Une plateforme rapide, accessible et réaliste pour tester vos compétences en hacking.</p>
-                </div>
-                <div class="back">
-                  <p>la root est longue mais la voie est Libre, 
-                    <a href="https://www.root-me.org/" >tester vos compétences !</a></p>
-                </div>
-              </div>
-            </div>
-            <!-- cards fin -->
 
-          </div>
-          <!-- page-content fin -->
+        <div class="contents">
+          <!-- index-content -->
+          <div id="index-content" class="bloc index"></div>
+          <!-- index-content fin -->
 
           <!-- info-content -->
           <div id="info-content" class="bloc info">
@@ -177,7 +75,7 @@
           <!-- info-content fin -->
 
           <!-- tests-content -->
-          <div id="tests-content" class="bloc tests">
+          <div id="tests-content" class="active bloc tests">
 
             <!-- cards -->
             <div class="card">
@@ -192,9 +90,19 @@
                       Affichez un logo : <span class="boutton toolbox-action" actiondata="rootme">vig_rootme.png</span><br/>
                       Affichez un logo : <span class="boutton toolbox-action" actiondata="trello">vig_trello.png</span><br/>
                       Revenir à la page normale : <span class="boutton" actiondata="reset">Reset</span><br/>
-                      reset : <span class="boutton" actiondata="reset">same reset</span>
-                      test consolelocal : <span class="boutton" actiondata="consolelocal">console test en local</span>
+                      reset : <span class="boutton" actiondata="reset">same reset</span><br/>
+                      test :<span class="boutton" actiondata="consolelocal">console.log()</span>
                     </p>
+                    <div class="options">
+                      <div class="title">
+                        <h3>Options d'Affichage !!!</h3>
+                      </div>
+                      <div class="option-item">
+                        <h4>Test option 1</h4>
+                        <p><span>test</span> <span class="boutton" actiondata="test">test</span></p>
+                        <p><span>test</span> <span class="boutton" actiondata="test">test</span></p>
+                      </div>
+                    </div>
                   </div>
               </div>
             </div>
@@ -207,7 +115,7 @@
 
         <div id="footer" class="footer">
           <div class="content">
-            <p>info | contact | autres</p>
+            <p><span actiondata="consolelocal">info</span> | source</p>
           </div>
         </div>
 
@@ -216,6 +124,6 @@
         </div>
 
       </div>
-      <script src="toolbox.js"></script>
+      <script src="js/toolbox.js"></script>
     </body>
   </html>

@@ -31,11 +31,14 @@
     "html/img/vig/vig_toolbox.png",
     "html/img/svg/vig_toolbox.svg"
   ],
+  "background": {
+    "scripts": ["js/backgroundscripts.js"]
+  },
   "content_scripts": [
     {
       "exclude_matches": ["*://google.com/*"],
       "matches": ["*://*.github.com/patobeur/toolbox_ext_mozilla*"],
-      "js": ["if_you_open_toolbox_github_page.js"]
+      "js": ["js/if_you_open_toolbox_github_page.js"]
     }
   ]
 }
