@@ -8,13 +8,6 @@ window.dataCompteurBox = 0;
 
 
 
-//  var request = new XMLHttpRequest();
-//  let fichier = browser.extension.getURL("../json/content_datas.json");
-//  request.open("GET", fichier, false);
-//  request.send(null)
-//  var my_JSON_object = JSON.parse(request.responseText);
-//  alert (my_JSON_object.result[0]);
-//  consolelocal();
 
 const blocscontents = {
 	index : {
@@ -113,7 +106,22 @@ const blocscontents = {
 						content : "Developpez une extension avec mozilla US"
 					},
 					back : {
-						content : 'https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions" >Your_first_WebExtension</a>'
+						content : '<a href="https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions" >Your_first_WebExtension</a>'
+					}
+				}
+			},
+			{
+				url : "https://developer.mozilla.org/fr/docs/Mozilla/Add-ons/WebExtensions/Ajouter_une_page_de_param%C3%A8tres",
+				figure : {
+					src : "img/vig/vig_mozhack.png",
+					alt : "Developpez une extension avec mozilla FR"
+				},
+				contents : {
+					front : {
+						content : "Developpez une extension avec mozilla<br/>Ajouter_une_page_de_paramètres"
+					},
+					back : {
+						content : '<a href="https://developer.mozilla.org/fr/docs/Mozilla/Add-ons/WebExtensions/Ajouter_une_page_de_param%C3%A8tres" >Ajouter_une_page_de_paramètres</a>'
 					}
 				}
 			}

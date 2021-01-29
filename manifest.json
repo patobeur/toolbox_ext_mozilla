@@ -3,14 +3,24 @@
   "manifest_version": 2,
   "name": "Toolbox Extension (Pat)",
   "version": "1",
-  "description": "Personal Add-on project for firefox. Try to add some actions to the toolbar.",
+  "description": "Personal Add-on project for firefox. Trying to add some actions to the firefox toolbar. Also trying to get a nice tool for educational purposes.",
   "homepage_url": "https://github.com/patobeur/toolbox_ext_mozilla/",
   "icons": {
     "48": "icons/toolbox.svg"
   },
   "permissions": [
-    "activeTab"
+    "activeTab",
+    "storage"
   ],
+  "options_ui": {
+    "page": "settings/options.html"
+  },
+
+  "applications": {
+    "gecko": {
+      "id": "patobeur41@gmail.com"
+    }
+  },
   "browser_action": {
     "default_icon": "icons/toolbox.svg",
     "default_title": "Toolbox Test",
